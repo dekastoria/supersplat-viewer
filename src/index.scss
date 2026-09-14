@@ -861,8 +861,8 @@ button {
             justify-content: center;
             padding: 0 12px;
             white-space: nowrap;
-            width: min(240px, calc(100vw - 2 * clamp(30px, 8vw, 34px) - 24px));
-            max-width: calc(100vw - 2 * clamp(30px, 8vw, 34px) - 24px);
+            width: min(240px, calc(100vw - 84px));
+            max-width: calc(100vw - 84px);
 
             > #annotationNavTitle {
                 font-size: 14px;
