@@ -7,6 +7,9 @@ import type { Annotation } from './settings';
 import { Tooltip } from './tooltip';
 import type { Global } from './types';
 
+// DekaHobby MVP keeps XR hidden until the public viewer explicitly enables it.
+const XR_ENABLED = false;
+
 // Initialize the touch joystick for fly mode camera control
 const initJoystick = (
     dom: Record<string, HTMLElement>,
@@ -468,8 +471,8 @@ const initUI = (global: Global) => {
     events.on('showAnnotations:changed', (value: boolean) => localStorage.setItem('showAnnotations', String(value)));
 
     // AR/VR
-    const arChanged = () => dom.arMode.classList[state.hasAR ? 'remove' : 'add']('hidden');
-    const vrChanged = () => dom.vrMode.classList[state.hasVR ? 'remove' : 'add']('hidden');
+    const arChanged = () => dom.arMode.classList[XR_ENABLED && state.hasAR ? 'remove' : 'add']('hidden');
+    const vrChanged = () => dom.vrMode.classList[XR_ENABLED && state.hasVR ? 'remove' : 'add']('hidden');
 
     // When a session can't start on the current (WebGPU) device but would work on
     // WebGL, prompt the user to reload the viewer with the WebGL renderer before
@@ -490,6 +493,8 @@ const initUI = (global: Global) => {
     dom.xrModal.addEventListener('pointerdown', hideXrModal);
 
     const handleXrClick = (type: 'AR' | 'VR') => {
+        if (!XR_ENABLED) return;
+
         // Availability is backend-aware: when the session can start on the current
         // device (WebGPU included), start it directly. Otherwise the button is only
         // visible because the session would work on WebGL, so offer the reload.

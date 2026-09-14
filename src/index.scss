@@ -782,6 +782,9 @@ button {
     }
 
     > button {
+        width: clamp(40px, 11vw, 44px);
+        height: clamp(56px, 20vw, 80px);
+
         pointer-events: auto;
         appearance: none;
         border: 0;
@@ -802,6 +805,8 @@ button {
 
         > svg {
             display: block;
+            width: clamp(16px, 5vw, 20px);
+            height: clamp(16px, 5vw, 20px);
 
             > g {
                 &.stroke {
@@ -840,8 +845,8 @@ button {
         background-color: rgba(black, 0.6);
 
         > button {
-            width: 34px;
-            height: 34px;
+            width: clamp(30px, 8vw, 34px);
+            height: clamp(30px, 8vw, 34px);
             background-color: transparent;
 
             &:hover {
@@ -856,7 +861,8 @@ button {
             justify-content: center;
             padding: 0 12px;
             white-space: nowrap;
-            width: 240px;
+            width: min(240px, calc(100vw - 2 * clamp(30px, 8vw, 34px) - 24px));
+            max-width: calc(100vw - 2 * clamp(30px, 8vw, 34px) - 24px);
 
             > #annotationNavTitle {
                 font-size: 14px;
@@ -883,8 +889,6 @@ button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 44px;
-            height: 80px;
             background-color: rgba(black, 0.3);
 
             &:active {
