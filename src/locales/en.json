@@ -4,7 +4,6 @@
     "settings.show-annotations": "Show Annotations",
     "settings.frame": "Frame",
     "settings.reset": "Reset",
-
     "tooltip.play": "Play",
     "tooltip.pause": "Pause",
     "tooltip.orbit-camera": "Orbit Camera",
@@ -18,15 +17,12 @@
     "tooltip.enter-ar": "Enter AR",
     "tooltip.enter-vr": "Enter VR",
     "tooltip.fullscreen": "Fullscreen",
-
     "help.tab.desktop": "Desktop",
     "help.tab.touch": "Touch",
-
     "help.section.orbit": "Orbit Mode",
     "help.section.fly": "Fly Mode",
     "help.section.walk": "Walk Mode",
     "help.section.modes": "Mode Switching",
-
     "help.action.orbit": "Orbit",
     "help.action.pan": "Pan",
     "help.action.zoom": "Zoom",
@@ -50,7 +46,6 @@
     "help.action.play-pause": "Play / Pause",
     "help.action.toggle-help": "Toggle Help",
     "help.action.exit-cancel": "Exit / Cancel",
-
     "help.key.left-click": "Left Click",
     "help.key.left-click-drag": "Left Click + Drag",
     "help.key.right-click-drag": "Right Click + Drag",
@@ -68,13 +63,17 @@
     "help.key.shift-ctrl": "Shift / Ctrl",
     "help.key.space": "Space",
     "help.key.esc": "Esc",
-
     "xr-modal.title": "WebGL Required",
     "xr-modal.message": "AR and VR are not supported on the WebGPU renderer. Pressing OK will reload the viewer with WebGL.",
     "xr-modal.cancel": "Cancel",
     "xr-modal.ok": "OK",
-
     "walk-hint.desktop": "Click to walk. WASD to move freely.",
     "walk-hint.touch-tap": "Tap to walk. Drag to look around.",
-    "walk-hint.touch-gaming": "Use the joystick to move. Drag to look around. Tap to jump."
+    "walk-hint.touch-gaming": "Use the joystick to move. Drag to look around. Tap to jump.",
+    "loading.label": "Loading tour",
+    "loading.error": "The tour could not be loaded. Reload the page to try again.",
+    "annotation.previous": "Previous annotation",
+    "annotation.next": "Next annotation",
+    "annotation.info": "Annotation information",
+    "tooltip.exit-fullscreen": "Exit Fullscreen"
 }

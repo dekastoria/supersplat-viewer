@@ -17,7 +17,7 @@ import { App } from './app';
 import { MeshCollision, loadVoxelCollision } from './collision';
 import type { Collision } from './collision';
 import { observe } from './core/observe';
-import { initLocalization } from './localization';
+import { initLocalization, showLoadError } from './localization';
 import { importSettings } from './settings';
 import type { Config, Global, State } from './types';
 import { initPoster, initUI } from './ui';
@@ -303,6 +303,10 @@ const main = async (canvas: HTMLCanvasElement, settingsJson: unknown, config: Co
     const gsplatLoad = loadGsplat(app, config, (progress: number) => {
         state.progress = progress;
     });
+    gsplatLoad.catch((error) => {
+        showLoadError();
+        console.error(error);
+    });
 
     // Load skybox (continue without if it fails — e.g. CORS, 404)
     const skyboxLoad =
@@ -355,5 +359,7 @@ const main = async (canvas: HTMLCanvasElement, settingsJson: unknown, config: Co
 };
 
 console.log(`SuperSplat Viewer v${appVersion} | Engine v${engineVersion} (${engineRevision})`);
+
+Object.assign(main, { initLocalization, showLoadError });
 
 export { main };

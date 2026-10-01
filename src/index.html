@@ -116,7 +116,7 @@
             </a>
 
             <!-- Loading Indicator -->
-            <div id="loadingWrap">
+            <div id="loadingWrap" role="status" data-i18n-aria-label="loading.label">
                 <div id="loadingText"></div>
                 <div id="loadingBar"></div>
             </div>
@@ -132,13 +132,13 @@
                 <!-- Buttons Panel -->
                 <div id="buttonsContainer">
                     <div class="buttonGroup">
-                        <button id="play" class="controlButton hidden">
+                        <button id="play" class="controlButton hidden" data-i18n-aria-label="tooltip.play">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#playIcon" /></g>
                                 <g class="fill"><use href="#playIcon" /></g>
                             </svg>
                         </button>
-                        <button id="pause" class="controlButton hidden">
+                        <button id="pause" class="controlButton hidden" data-i18n-aria-label="tooltip.pause">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px">
                                 <g class="stroke"><use href="#pauseIcon" /></g>
                                 <g class="fill"><use href="#pauseIcon" /></g>
@@ -149,19 +149,31 @@
                     <div class="spacer"></div>
 
                     <div class="buttonGroup">
-                        <button id="orbitCamera" class="controlButton toggle left">
+                        <button
+                            id="orbitCamera"
+                            class="controlButton toggle left"
+                            data-i18n-aria-label="tooltip.orbit-camera"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#orbitIcon" /></g>
                                 <g class="fill"><use href="#orbitIcon" /></g>
                             </svg>
                         </button>
-                        <button id="flyCamera" class="controlButton toggle right">
+                        <button
+                            id="flyCamera"
+                            class="controlButton toggle right"
+                            data-i18n-aria-label="tooltip.fly-camera"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#flyIcon" /></g>
                                 <g class="fill"><use href="#flyIcon" /></g>
                             </svg>
                         </button>
-                        <button id="fpsCamera" class="controlButton toggle right hidden">
+                        <button
+                            id="fpsCamera"
+                            class="controlButton toggle right hidden"
+                            data-i18n-aria-label="tooltip.walk-mode"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#walkIcon" /></g>
                                 <g class="fill"><use href="#walkIcon" /></g>
@@ -170,46 +182,54 @@
                     </div>
 
                     <div class="buttonGroup">
-                        <button id="arMode" class="controlButton hidden">
+                        <button id="arMode" class="controlButton hidden" data-i18n-aria-label="tooltip.enter-ar">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#arIcon" /></g>
                                 <g class="fill"><use href="#arIcon" /></g>
                             </svg>
                         </button>
-                        <button id="vrMode" class="controlButton hidden">
+                        <button id="vrMode" class="controlButton hidden" data-i18n-aria-label="tooltip.enter-vr">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#vrIcon" /></g>
                                 <g class="fill"><use href="#vrIcon" /></g>
                             </svg>
                         </button>
 
-                        <button id="showCollision" class="controlButton hidden">
+                        <button
+                            id="showCollision"
+                            class="controlButton hidden"
+                            data-i18n-aria-label="tooltip.show-collision"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#voxelIcon" /></g>
                                 <g class="fill"><use href="#voxelIcon" /></g>
                             </svg>
                         </button>
 
-                        <button id="info" class="controlButton">
+                        <button id="info" class="controlButton" data-i18n-aria-label="tooltip.help">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#infoIcon" /></g>
                                 <g class="fill"><use href="#infoIcon" /></g>
                             </svg>
                         </button>
-                        <button id="settings" class="controlButton">
+                        <button id="settings" class="controlButton" data-i18n-aria-label="tooltip.settings">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#settingsIcon" /></g>
                                 <g class="fill"><use href="#settingsIcon" /></g>
                             </svg>
                         </button>
 
-                        <button id="enterFullscreen" class="controlButton">
+                        <button id="enterFullscreen" class="controlButton" data-i18n-aria-label="tooltip.fullscreen">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#enterFullscreenIcon" /></g>
                                 <g class="fill"><use href="#enterFullscreenIcon" /></g>
                             </svg>
                         </button>
-                        <button id="exitFullscreen" class="controlButton hidden">
+                        <button
+                            id="exitFullscreen"
+                            class="controlButton hidden"
+                            data-i18n-aria-label="tooltip.exit-fullscreen"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                                 <g class="stroke"><use href="#exitFullscreenIcon" /></g>
                                 <g class="fill"><use href="#exitFullscreenIcon" /></g>
@@ -244,8 +264,12 @@
                 </div>
                 <div class="divider"></div>
                 <div class="settingsRow">
-                    <button id="frame" data-i18n="settings.frame">Frame</button>
-                    <button id="reset" data-i18n="settings.reset">Reset</button>
+                    <button id="frame" data-i18n="settings.frame" data-i18n-aria-label="tooltip.frame-scene">
+                        Frame
+                    </button>
+                    <button id="reset" data-i18n="settings.reset" data-i18n-aria-label="tooltip.reset-camera">
+                        Reset
+                    </button>
                 </div>
             </div>
 
@@ -528,16 +552,16 @@
 
             <!-- Annotation Navigator -->
             <div id="annotationNav" class="hidden">
-                <button id="annotationPrev">
+                <button id="annotationPrev" data-i18n-aria-label="annotation.previous">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                         <g class="stroke"><use href="#chevronLeftIcon" /></g>
                         <g class="fill"><use href="#chevronLeftIcon" /></g>
                     </svg>
                 </button>
-                <div id="annotationInfo">
+                <div id="annotationInfo" data-i18n-aria-label="annotation.info">
                     <span id="annotationNavTitle"></span>
                 </div>
-                <button id="annotationNext">
+                <button id="annotationNext" data-i18n-aria-label="annotation.next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
                         <g class="stroke"><use href="#chevronRightIcon" /></g>
                         <g class="fill"><use href="#chevronRightIcon" /></g>
@@ -678,6 +702,8 @@
         <script type="module">
             import { main } from './index.js';
 
+            const { initLocalization: initViewerLocalization, showLoadError: showViewerLoadError } = main;
+
             const { config, settings } = window.sse;
             const { poster } = config;
 
@@ -694,8 +720,14 @@
 
             document.addEventListener('DOMContentLoaded', async () => {
                 const canvas = document.getElementById('application-canvas');
-                const settingsJson = await settings;
-                const viewer = await main(canvas, settingsJson, config);
+                initViewerLocalization(config.lang);
+                try {
+                    const settingsJson = await settings;
+                    await main(canvas, settingsJson, config);
+                } catch (error) {
+                    showViewerLoadError();
+                    console.error(error);
+                }
             });
         </script>
     </body>

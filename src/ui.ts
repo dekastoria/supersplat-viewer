@@ -828,7 +828,9 @@ const initUI = (global: Global) => {
     tooltip.register(dom.arMode, localize('tooltip.enter-ar'), 'top');
     tooltip.register(dom.vrMode, localize('tooltip.enter-vr'), 'top');
     tooltip.register(dom.enterFullscreen, localize('tooltip.fullscreen'), 'top');
-    tooltip.register(dom.exitFullscreen, localize('tooltip.fullscreen'), 'top');
+    tooltip.register(dom.exitFullscreen, localize('tooltip.exit-fullscreen'), 'top');
+    tooltip.register(dom.annotationPrev, localize('annotation.previous'), 'top');
+    tooltip.register(dom.annotationNext, localize('annotation.next'), 'top');
 
     const isThirdPartyEmbedded = () => {
         try {

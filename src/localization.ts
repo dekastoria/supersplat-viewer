@@ -2,6 +2,7 @@ import deJson from './locales/de.json';
 import enJson from './locales/en.json';
 import esJson from './locales/es.json';
 import frJson from './locales/fr.json';
+import idJson from './locales/id.json';
 import jaJson from './locales/ja.json';
 import koJson from './locales/ko.json';
 import ptBRJson from './locales/pt-BR.json';
@@ -17,6 +18,7 @@ const dictionaries: Record<string, Dictionary> = {
     en,
     es: esJson,
     fr: frJson,
+    id: idJson,
     ja: jaJson,
     ko: koJson,
     'pt-BR': ptBRJson,
@@ -59,6 +61,17 @@ const initLocalization = (lang?: string) => {
     document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
         el.textContent = localize(el.dataset.i18n);
     });
+    document.querySelectorAll<HTMLElement>('[data-i18n-aria-label]').forEach((el) => {
+        el.setAttribute('aria-label', localize(el.dataset.i18nAriaLabel));
+    });
 };
 
-export { initLocalization, localize };
+const showLoadError = () => {
+    const text = document.getElementById('loadingText');
+    text.textContent = localize('loading.error');
+    text.setAttribute('role', 'alert');
+    document.getElementById('loadingWrap').classList.remove('hidden');
+    document.getElementById('loadingBar').classList.add('hidden');
+};
+
+export { initLocalization, localize, showLoadError };
